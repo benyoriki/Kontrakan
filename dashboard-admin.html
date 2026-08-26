@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Super Admin — Cartok</title>
+<link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div id="page-loader" class="page-loader" aria-hidden="true">
+  <div class="loader-glow"></div>
+  <div class="loader-mark">
+    <img src="img/icon-96.png" alt="">
+    <span class="loader-ring"></span>
+  </div>
+  <div class="loader-word">Cartok</div>
+  <p class="loader-note">Prototipe Cari Kontrakan Online — website hanya contoh untuk keperluan testing. <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></p>
+  <div class="loader-progress-track"><div class="loader-progress-fill"></div></div>
+  <div class="loader-credit">Website Developer <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></div>
+</div>
+<noscript><style>.page-loader{display:none;}</style></noscript>
+
+
+<div class="dash-wrap">
+  <div class="filter-scrim" id="dash-sidebar-scrim"></div>
+  <aside class="dash-sidebar" id="dash-sidebar">
+    <div class="dash-brand"><img src="img/icon-96.png" class="brand-mark" alt="Cartok"> Cartok Admin</div>
+    <nav class="dash-nav">
+      <a href="#" data-section="overview" class="active"><span class="ic">📊</span> Dashboard</a>
+      <a href="#" data-section="allproperties"><span class="ic">🏘️</span> Semua Properti</a>
+      <a href="#" data-section="verifyproperties"><span class="ic">✅</span> Verifikasi Properti</a>
+      <a href="#" data-section="owners"><span class="ic">🧑‍💼</span> Pemilik</a>
+      <a href="#" data-section="users"><span class="ic">👥</span> Pengguna</a>
+      <a href="#" data-section="overview"><span class="ic">📈</span> Statistik</a>
+      <a href="#" data-section="settings"><span class="ic">⚙️</span> Pengaturan</a>
+    </nav>
+    <div class="dash-foot">
+      <div class="user-chip w-full" style="justify-content:flex-start;">
+        <img id="dash-user-avatar" class="avatar" src=""/>
+        <div style="overflow:hidden;">
+          <div id="dash-user-name" style="font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">-</div>
+          <div id="dash-user-role" class="text-tertiary" style="font-size:11px;">-</div>
+        </div>
+      </div>
+      <button class="btn btn-ghost btn-sm btn-block mt-8" onclick="logout()">🚪 Keluar</button>
+    </div>
+  </aside>
+
+  <div class="dash-main">
+    <div class="dash-topbar">
+      <div class="flex items-center gap-12">
+        <button class="dash-menu-btn hamburger" id="dash-menu-btn">☰</button>
+        <div class="page-title">Dashboard Super Admin</div>
+      </div>
+      <div class="flex items-center gap-12">
+        <button class="theme-toggle" id="theme-toggle-dash">🌙</button>
+        <a href="index.html" class="btn btn-secondary btn-sm">🌐 <span class="btn-label">Lihat Situs</span></a>
+      </div>
+    </div>
+
+    <div class="dash-content">
+
+      <!-- OVERVIEW -->
+      <section class="dash-section" id="section-overview">
+        <div class="welcome-banner reveal">
+          <div>
+            <span class="eyebrow" style="color:var(--accent-strong);">Panel Super Admin</span>
+            <h2 id="welcome-name">Halo 👋</h2>
+            <p class="mt-8">Pantau kesehatan platform dan tinjau pengajuan baru dari sini.</p>
+          </div>
+          <a href="#" class="btn btn-primary" onclick="document.querySelector('[data-section=verifyproperties]').click(); return false;">✅ Tinjau Pengajuan</a>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-box"><div class="top"><div class="stat-icon" style="background:var(--accent-soft);color:var(--accent);">🏘️</div></div><div class="num" id="stat-total-properties">0</div><div class="lbl">Total Properti</div></div>
+          <div class="stat-box"><div class="top"><div class="stat-icon" style="background:var(--forest-soft);color:var(--forest);">✅</div></div><div class="num" id="stat-active-properties">0</div><div class="lbl">Properti Aktif</div></div>
+          <div class="stat-box"><div class="top"><div class="stat-icon" style="background:var(--amber-soft);color:var(--amber);">⏳</div></div><div class="num" id="stat-pending-properties">0</div><div class="lbl">Menunggu Verifikasi</div></div>
+          <div class="stat-box"><div class="top"><div class="stat-icon" style="background:var(--accent-soft);color:var(--accent);">🧑‍💼</div></div><div class="num" id="stat-total-owners">0</div><div class="lbl">Total Pemilik</div></div>
+          <div class="stat-box"><div class="top"><div class="stat-icon" style="background:var(--accent-soft);color:var(--accent);">👥</div></div><div class="num" id="stat-total-users">0</div><div class="lbl">Total Pengguna</div></div>
+          <div class="stat-box"><div class="top"><div class="stat-icon" style="background:var(--red-soft);color:var(--red);">⏸</div></div><div class="num" id="stat-pending-owners">0</div><div class="lbl">Pemilik Pending</div></div>
+          <div class="stat-box"><div class="top"><div class="stat-icon" style="background:var(--accent-soft);color:var(--accent);">🧱</div></div><div class="num" id="stat-total-units">0</div><div class="lbl">Total Unit</div></div>
+          <div class="stat-box"><div class="top"><div class="stat-icon" style="background:var(--forest-soft);color:var(--forest);">🔓</div></div><div class="num" id="stat-empty-units">0</div><div class="lbl">Unit Kosong</div></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>🗺️ Sebaran Properti per Kota</h3></div>
+          <div class="bar-chart" id="admin-chart"></div>
+        </div>
+      </section>
+
+      <!-- ALL PROPERTIES -->
+      <section class="dash-section hidden" id="section-allproperties">
+        <h3 class="mb-16">🏘️ Semua Properti</h3>
+        <div class="table-wrap panel" style="padding:0;">
+          <div class="table-scroll-hint">👉 Geser tabel untuk lihat aksi</div>
+          <table>
+            <thead><tr><th></th><th>Properti</th><th>Pemilik</th><th>Harga</th><th>Status</th><th>Aksi</th></tr></thead>
+            <tbody id="all-properties-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- VERIFY PROPERTIES -->
+      <section class="dash-section hidden" id="section-verifyproperties">
+        <h3 class="mb-16">✅ Verifikasi Properti Baru</h3>
+        <div id="pending-properties-grid" class="grid-cards" style="grid-template-columns:1fr;"></div>
+      </section>
+
+      <!-- OWNERS -->
+      <section class="dash-section hidden" id="section-owners">
+        <h3 class="mb-16">🧑‍💼 Verifikasi Pemilik Baru</h3>
+        <div id="pending-owners-empty" class="empty-state hidden">
+          <div class="icon">✅</div><h3>Tidak Ada Antrian</h3><p>Semua pemilik sudah diverifikasi.</p>
+        </div>
+        <div class="table-wrap panel hidden" id="pending-owners-table" style="padding:0;">
+          <div class="table-scroll-hint">👉 Geser tabel untuk lihat aksi</div>
+          <table>
+            <thead><tr><th></th><th>Nama</th><th>Email</th><th>Telepon</th><th>Jumlah Properti</th><th>Tgl Daftar</th><th>Aksi</th></tr></thead>
+            <tbody id="pending-owners-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- USERS -->
+      <section class="dash-section hidden" id="section-users">
+        <h3 class="mb-16">👥 Semua Pengguna</h3>
+        <div class="table-wrap panel" style="padding:0;">
+          <div class="table-scroll-hint">👉 Geser tabel untuk lihat aksi</div>
+          <table>
+            <thead><tr><th></th><th>Nama</th><th>Email</th><th>Role</th><th>Status</th><th>Aksi</th></tr></thead>
+            <tbody id="all-users-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="dash-section hidden" id="section-settings">
+        <div class="panel" style="max-width:480px;">
+          <h3 class="mb-16">⚙️ Pengaturan Platform</h3>
+          <div class="flex justify-between items-center mb-16">
+            <span>Mode Tampilan</span>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+          </div>
+          <p class="text-sm text-tertiary mb-16">Reset seluruh data demo (pengguna, properti, favorit) ke kondisi awal.</p>
+          <button class="btn btn-danger" id="reset-demo-btn">🗑️ Reset Data Demo</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+<script src="js/properties.js"></script>
+<script src="js/admin.js"></script>
+<script>
+  initAdminDashboard();
+</script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Pemilik — Cartok</title>
+<link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div id="page-loader" class="page-loader" aria-hidden="true">
+  <div class="loader-glow"></div>
+  <div class="loader-mark">
+    <img src="img/icon-96.png" alt="">
+    <span class="loader-ring"></span>
+  </div>
+  <div class="loader-word">Cartok</div>
+  <p class="loader-note">Prototipe Cari Kontrakan Online — website hanya contoh untuk keperluan testing. <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></p>
+  <div class="loader-progress-track"><div class="loader-progress-fill"></div></div>
+  <div class="loader-credit">Website Developer <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></div>
+</div>
+<noscript><style>.page-loader{display:none;}</style></noscript>
+
+
+<div class="dash-wrap">
+  <div class="filter-scrim" id="dash-sidebar-scrim"></div>
+  <aside class="dash-sidebar" id="dash-sidebar">
+    <div class="dash-brand"><img src="img/icon-96.png" class="brand-mark" alt="Cartok"> Cartok</div>
+    <nav class="dash-nav">
+      <a href="#" data-section="overview" class="active"><span class="ic">📊</span> Dashboard</a>
+      <a href="#" data-section="properties"><span class="ic">🏠</span> Properti Saya</a>
+      <a href="#" data-section="add"><span class="ic">➕</span> Tambah Properti</a>
+      <a href="#" data-section="overview"><span class="ic">📈</span> Statistik</a>
+      <a href="#" data-section="messages"><span class="ic">💬</span> Pesan</a>
+      <a href="#" data-section="profile"><span class="ic">👤</span> Profil</a>
+      <a href="#" data-section="settings"><span class="ic">⚙️</span> Pengaturan</a>
+    </nav>
+    <div class="dash-foot">
+      <div class="user-chip w-full" style="justify-content:flex-start;">
+        <img id="dash-user-avatar" class="avatar" src=""/>
+        <div style="overflow:hidden;">
+          <div id="dash-user-name" style="font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">-</div>
+          <div id="dash-user-role" class="text-tertiary" style="font-size:11px;">-</div>
+        </div>
+      </div>
+      <button class="btn btn-ghost btn-sm btn-block mt-8" onclick="logout()">🚪 Keluar</button>
+    </div>
+  </aside>
+
+  <div class="dash-main">
+    <div class="dash-topbar">
+      <div class="flex items-center gap-12">
+        <button class="dash-menu-btn hamburger" id="dash-menu-btn">☰</button>
+        <div>
+          <div class="page-title">Dashboard Pemilik</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-12">
+        <button class="theme-toggle" id="theme-toggle-dash">🌙</button>
+        <a href="index.html" class="btn btn-secondary btn-sm">🌐 <span class="btn-label">Lihat Situs</span></a>
+      </div>
+    </div>
+
+    <div class="dash-content">
+
+      <!-- OVERVIEW -->
+      <section class="dash-section" id="section-overview">
+        <div class="welcome-banner reveal">
+          <div>
+            <span class="eyebrow" style="color:var(--accent-strong);">Selamat datang kembali</span>
+            <h2 id="welcome-name">Halo 👋</h2>
+            <p class="mt-8">Ini ringkasan performa properti kamu hari ini di Cartok.</p>
+          </div>
+          <a href="#" class="btn btn-primary" onclick="document.querySelector('[data-section=add]').click(); return false;">➕ Tambah Properti</a>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-box"><div class="top"><div class="stat-icon" style="background:var(--accent-soft);color:var(--accent);">🏠</div></div><div class="num" id="stat-total-prop">0</div><div class="lbl">Total Properti</div></div>
+          <div class="stat-box"><div class="top"><div class="stat-icon" style="background:var(--forest-soft);color:var(--forest);">✅</div></div><div class="num" id="stat-active-prop">0</div><div class="lbl">Properti Aktif</div></div>
+          <div class="stat-box"><div class="top"><div class="stat-icon" style="background:var(--amber-soft);color:var(--amber);">⏳</div></div><div class="num" id="stat-pending-prop">0</div><div class="lbl">Menunggu Verifikasi</div></div>
+          <div class="stat-box"><div class="top"><div class="stat-icon" style="background:var(--red-soft);color:var(--red);">🔴</div></div><div class="num" id="stat-full-prop">0</div><div class="lbl">Properti Penuh</div></div>
+          <div class="stat-box"><div class="top"><div class="stat-icon" style="background:var(--accent-soft);color:var(--accent);">🧱</div></div><div class="num" id="stat-total-unit">0</div><div class="lbl">Total Unit</div></div>
+          <div class="stat-box"><div class="top"><div class="stat-icon" style="background:var(--forest-soft);color:var(--forest);">🔓</div></div><div class="num" id="stat-empty-unit">0</div><div class="lbl">Unit Kosong</div></div>
+          <div class="stat-box"><div class="top"><div class="stat-icon" style="background:var(--accent-soft);color:var(--accent);">👁</div></div><div class="num" id="stat-total-view">0</div><div class="lbl">Total Dilihat</div></div>
+          <div class="stat-box"><div class="top"><div class="stat-icon" style="background:var(--red-soft);color:var(--red);">❤️</div></div><div class="num" id="stat-total-fav">0</div><div class="lbl">Total Favorit</div></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>📈 Properti Terpopuler (berdasarkan dilihat)</h3></div>
+          <div class="bar-chart" id="owner-chart"></div>
+        </div>
+      </section>
+
+      <!-- PROPERTIES -->
+      <section class="dash-section hidden" id="section-properties">
+        <div class="panel-head">
+          <div>
+            <h3>🏠 Properti Saya</h3>
+            <p class="page-sub">Kelola seluruh properti yang kamu daftarkan.</p>
+          </div>
+          <a href="#" class="btn btn-primary btn-sm" onclick="document.querySelector('[data-section=add]').click(); return false;">➕ Tambah Properti</a>
+        </div>
+        <div id="my-properties-empty" class="empty-state hidden">
+          <div class="icon">🏚️</div><h3>Belum Ada Properti</h3>
+          <p>Mulai daftarkan properti pertamamu agar bisa dilihat pencari kontrakan.</p>
+          <a href="#" class="btn btn-primary" onclick="document.querySelector('[data-section=add]').click(); return false;">Tambah Properti</a>
+        </div>
+        <div class="table-wrap panel hidden" id="my-properties-table" style="padding:0;">
+          <div class="table-scroll-hint">👉 Geser tabel untuk lihat status &amp; aksi</div>
+          <table>
+            <thead><tr><th></th><th>Properti</th><th>Harga</th><th>Kosong/Total</th><th>Status</th><th>Ketersediaan</th><th>Aksi</th></tr></thead>
+            <tbody id="my-properties-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ADD / EDIT PROPERTY -->
+      <section class="dash-section hidden" id="section-add">
+        <div class="panel">
+          <h3 id="form-title">Tambah Properti Baru</h3>
+          <p class="page-sub mb-16">Properti akan tayang setelah disetujui admin.</p>
+
+          <form id="property-form">
+            <div class="form-section-title mt-16">📋 Informasi Dasar</div>
+            <div class="info-grid">
+              <div class="form-group"><label>Nama Properti *</label><input type="text" name="name" required></div>
+              <div class="form-group"><label>Jenis Properti *</label>
+                <select name="type" required>
+                  <option value="kontrakan">Kontrakan</option>
+                  <option value="kos_putra">Kos Putra</option>
+                  <option value="kos_putri">Kos Putri</option>
+                  <option value="kos_campur">Kos Campur</option>
+                  <option value="perumahan">Perumahan</option>
+                </select>
+              </div>
+              <div class="form-group"><label>Harga / Bulan (Rp) *</label><input type="number" name="price" required min="0"></div>
+              <div class="form-group"><label>Minimal Masa Sewa</label>
+                <select name="minRent"><option>1 Bulan</option><option>3 Bulan</option><option>6 Bulan</option><option>1 Tahun</option></select>
+              </div>
+            </div>
+            <div class="form-group mt-16"><label>Deskripsi</label><textarea name="description" rows="3"></textarea></div>
+
+            <div class="form-section-title mt-24">📍 Lokasi</div>
+            <div class="info-grid">
+              <div class="form-group"><label>Provinsi *</label><input type="text" name="province" required placeholder="Jawa Barat"></div>
+              <div class="form-group"><label>Kota *</label><input type="text" name="city" required placeholder="Cikarang"></div>
+              <div class="form-group"><label>Kecamatan *</label><input type="text" name="district" required placeholder="Cikarang Selatan"></div>
+              <div class="form-group"><label>Alamat Lengkap *</label><input type="text" name="address" required></div>
+            </div>
+
+            <div class="form-section-title mt-24">📐 Detail</div>
+            <div class="info-grid">
+              <div class="form-group"><label>Total Unit *</label><input type="number" name="totalUnit" required min="1"></div>
+              <div class="form-group"><label>Unit Kosong *</label><input type="number" name="unitKosong" required min="0"></div>
+              <div class="form-group"><label>Unit Sedang Perbaikan</label><input type="number" name="unitPerbaikan" min="0" value="0"></div>
+              <div class="form-group"><label>Jumlah Kamar Tidur *</label><input type="number" name="bedrooms" required min="1"></div>
+              <div class="form-group"><label>Jumlah Kamar Mandi *</label><input type="number" name="bathrooms" required min="1"></div>
+              <div class="form-group"><label>Luas Tanah (m²)</label><input type="number" name="landArea"></div>
+              <div class="form-group"><label>Luas Bangunan (m²)</label><input type="number" name="buildingArea"></div>
+              <div class="form-group"><label>Furnitur</label>
+                <select name="furnished"><option value="furnished">Furnished</option><option value="semi_furnished">Semi Furnished</option><option value="unfurnished">Unfurnished</option></select>
+              </div>
+            </div>
+
+            <div class="form-section-title mt-24">✨ Fasilitas</div>
+            <div class="checkbox-grid" id="facility-checkboxes"></div>
+
+            <div class="form-section-title mt-24">👍 Kelebihan</div>
+            <div id="pros-list"></div>
+            <button type="button" class="btn btn-sm btn-secondary" onclick="addDynamicRow('pros-list', OWNER_PROS, 'Contoh: Dekat minimarket')">+ Tambah Kelebihan</button>
+
+            <div class="form-section-title mt-24">👎 Kekurangan</div>
+            <div id="cons-list"></div>
+            <button type="button" class="btn btn-sm btn-secondary" onclick="addDynamicRow('cons-list', OWNER_CONS, 'Contoh: Area sedikit ramai')">+ Tambah Kekurangan</button>
+
+            <div class="form-section-title mt-24">📷 Foto Properti (Maks 10)</div>
+            <label class="photo-drop">
+              📷 Klik untuk unggah foto (maks 900KB/foto) atau
+              <input type="file" accept="image/*" multiple hidden onchange="handlePhotoUpload(this)">
+            </label>
+            <button type="button" class="btn btn-sm btn-secondary mt-8" onclick="addPlaceholderPhoto()">+ Gunakan Foto Contoh</button>
+            <div class="text-sm text-tertiary mt-8" id="photo-count">0/10 foto</div>
+            <div class="photo-preview-grid" id="photo-preview-grid"></div>
+
+            <button type="submit" class="btn btn-primary mt-24" id="form-submit-btn">Ajukan Properti</button>
+            <button type="button" class="btn btn-ghost mt-24" onclick="resetPropertyForm()">Batal</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- MESSAGES -->
+      <section class="dash-section hidden" id="section-messages">
+        <h3 class="mb-16">💬 Pesan Masuk</h3>
+        <div id="owner-messages"></div>
+      </section>
+
+      <!-- PROFILE -->
+      <section class="dash-section hidden" id="section-profile">
+        <div class="panel" style="max-width:480px;">
+          <h3 class="mb-16">👤 Profil Saya</h3>
+          <form id="owner-profile-form">
+            <div class="form-group"><label>Nama</label><input type="text" name="name" required></div>
+            <div class="form-group"><label>Email</label><input type="email" name="email" disabled></div>
+            <div class="form-group"><label>Nomor Telepon</label><input type="tel" name="phone" required></div>
+            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="dash-section hidden" id="section-settings">
+        <div class="panel" style="max-width:480px;">
+          <h3 class="mb-16">⚙️ Pengaturan</h3>
+          <div class="flex justify-between items-center">
+            <span>Mode Tampilan</span>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+          </div>
+          <p class="text-sm text-tertiary mt-16">Data akun kamu tersimpan secara lokal di browser ini (localStorage) untuk keperluan demo.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+<script src="js/properties.js"></script>
+<script src="js/dashboard.js"></script>
+<script>
+  initOwnerDashboard();
+</script>
+</body>
+</html>

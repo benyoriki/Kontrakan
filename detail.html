@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detail Properti — Cartok</title>
+<link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div id="page-loader" class="page-loader" aria-hidden="true">
+  <div class="loader-glow"></div>
+  <div class="loader-mark">
+    <img src="img/icon-96.png" alt="">
+    <span class="loader-ring"></span>
+  </div>
+  <div class="loader-word">Cartok</div>
+  <p class="loader-note">Prototipe Cari Kontrakan Online — website hanya contoh untuk keperluan testing. <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></p>
+  <div class="loader-progress-track"><div class="loader-progress-fill"></div></div>
+  <div class="loader-credit">Website Developer <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></div>
+</div>
+<noscript><style>.page-loader{display:none;}</style></noscript>
+
+
+<header id="site-navbar" class="navbar"></header>
+
+<main class="section container has-mobile-cta" style="padding-top:20px;">
+  <nav class="breadcrumb" id="breadcrumb"></nav>
+  <div id="detail-root">
+    <div class="skeleton" style="height:420px;border-radius:22px;"></div>
+    <div class="skeleton mt-24" style="height:120px;border-radius:22px;"></div>
+  </div>
+  <section class="mt-24" id="related-section"></section>
+</main>
+
+<div class="mobile-cta-bar" id="mobile-cta-bar"></div>
+
+<footer id="site-footer"></footer>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+<script src="js/properties.js"></script>
+<script>
+  renderNavbar("");
+  renderFooter();
+  initDetailPage();
+</script>
+</body>
+</html>

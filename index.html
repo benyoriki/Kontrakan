@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartok — Temukan Kontrakan &amp; Kos Terpercaya di Indonesia</title>
+<meta name="description" content="Cartok adalah platform pencarian dan pendaftaran kontrakan serta kos-kosan. Bandingkan harga, lihat fasilitas, dan temukan kontrakan yang tersedia sebelum datang ke lokasi.">
+<meta property="og:title" content="Cartok — Marketplace Kontrakan &amp; Kos Modern">
+<meta property="og:description" content="Cari, bandingkan, dan temukan kontrakan atau kos-kosan yang tepat untukmu.">
+<link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div id="page-loader" class="page-loader" aria-hidden="true">
+  <div class="loader-glow"></div>
+  <div class="loader-mark">
+    <img src="img/icon-96.png" alt="">
+    <span class="loader-ring"></span>
+  </div>
+  <div class="loader-word">Cartok</div>
+  <p class="loader-note">Prototipe Cari Kontrakan Online — website hanya contoh untuk keperluan testing. <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></p>
+  <div class="loader-progress-track"><div class="loader-progress-fill"></div></div>
+  <div class="loader-credit">Website Developer <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></div>
+</div>
+<noscript><style>.page-loader{display:none;}</style></noscript>
+
+
+<header id="site-navbar" class="navbar"></header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-layout">
+      <div>
+        <span class="hero-badge"><span class="dot">✓</span> <b>Kontrakan, Kos &amp; Perumahan</b></span>
+        <h1>Temukan kontrakan yang <em>tepat</em>, jauh sebelum kamu datang ke lokasi.</h1>
+        <p class="lead">Bandingkan kontrakan dan kos di satu tempat — lengkap dengan foto asli, kejujuran kelebihan-kekurangan, dan status unit kosong yang selalu diperbarui pemiliknya.</p>
+        <div class="hero-actions">
+          <a href="search.html" class="btn btn-primary">Cari Kontrakan Sekarang</a>
+          <a href="register.html" class="btn btn-secondary">Daftarkan Properti Kamu</a>
+        </div>
+        <div class="hero-trust">
+          <div class="stack">
+            <img src="https://i.pravatar.cc/100?img=32" alt="">
+            <img src="https://i.pravatar.cc/100?img=12" alt="">
+            <img src="https://i.pravatar.cc/100?img=45" alt="">
+            <img src="https://i.pravatar.cc/100?img=8" alt="">
+          </div>
+          <span>Dipercaya 600+ pemilik &amp; ribuan pencari kontrakan di 8 kota</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-visual-card">
+          <img src="img/kontrak_01.jpg" alt="">
+          <div class="body">
+            <div class="t1">Kontrakan Griya Biru Asri</div>
+            <div class="t2">📍 Bekasi Timur, Bekasi</div>
+            <div class="t3">Rp700.000 / bulan</div>
+          </div>
+        </div>
+        <div class="hero-chip hero-chip-1"><span class="num">1</span> <span>Unit Kosong</span></div>
+        <div class="hero-chip hero-chip-2">⭐ <span class="num">4.5</span> <span>/ 28 ulasan</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-wrap">
+    <div class="marquee-track" id="city-marquee">
+      <span>Bekasi</span><span>Cikarang</span><span>Karawang</span><span>Jakarta Timur</span><span>Bandung</span><span>Bogor</span><span>Depok</span><span>Tangerang</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="container">
+    <div class="stats-strip reveal">
+      <div class="stat-card"><div class="stat-num"><span id="stat-properties">0</span></div><div class="stat-label">Properti Terdaftar</div></div>
+      <div class="stat-card"><div class="stat-num"><span id="stat-units">0</span></div><div class="stat-label">Total Kamar</div></div>
+      <div class="stat-card"><div class="stat-num"><span id="stat-available">0</span></div><div class="stat-label">Unit Tersedia</div></div>
+      <div class="stat-card"><div class="stat-num"><span id="stat-owners">0</span></div><div class="stat-label">Pemilik Terverifikasi</div></div>
+    </div>
+  </section>
+
+  <!-- WHY CARTOK (bento) -->
+  <section class="section container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Kenapa Cartok</span>
+        <h2 class="section-title">Dibangun agar kamu tidak salah pilih kontrakan</h2>
+        <p class="section-sub">Setiap detail dirancang supaya keputusan sewa kamu lebih cepat dan lebih tenang.</p>
+      </div>
+    </div>
+    <div class="bento-grid reveal">
+      <div class="bento-item wide dark">
+        <div class="bento-icon">🔍</div>
+        <div>
+          <h4>Transparan sampai ke kekurangannya</h4>
+          <p>Setiap listing wajib mencantumkan kelebihan <em>dan</em> kekurangan properti — bukan cuma sisi baiknya saja.</p>
+        </div>
+      </div>
+      <div class="bento-item">
+        <div class="bento-icon">🛡️</div>
+        <div>
+          <h4>Pemilik terverifikasi</h4>
+          <p>Setiap akun pemilik ditinjau manual oleh admin sebelum bisa mempublikasikan properti.</p>
+        </div>
+      </div>
+      <div class="bento-item tall">
+        <div>
+          <div class="bento-icon">🧮</div>
+          <h4>Ketersediaan unit real-time</h4>
+          <p>Lihat langsung berapa unit yang masih kosong — hindari survey ke tempat yang ternyata sudah penuh.</p>
+        </div>
+        <div class="bento-num">8<span style="font-size:16px;color:var(--text-tertiary);"> kota</span></div>
+      </div>
+      <div class="bento-item">
+        <div class="bento-icon">🌙</div>
+        <div>
+          <h4>Nyaman di mata, siang atau malam</h4>
+          <p>Dark mode yang benar-benar dirancang, bukan sekadar warna dibalik.</p>
+        </div>
+      </div>
+      <div class="bento-item">
+        <div class="bento-icon">❤️</div>
+        <div>
+          <h4>Simpan &amp; bandingkan</h4>
+          <p>Tandai favorit dan bandingkan beberapa pilihan sebelum memutuskan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR -->
+  <section class="section container reveal">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Terdaftar di Cartok</span>
+        <h2 class="section-title">Daftar Kontrakan &amp; Kos yang Sudah Terdaftar</h2>
+        <p class="section-sub">Kontrakan, kos, dan perumahan yang sudah melalui verifikasi tim Cartok dan siap disewa.</p>
+      </div>
+      <a href="search.html" class="link-more">Lihat Semua →</a>
+    </div>
+    <div class="grid-cards" id="popular-grid"></div>
+  </section>
+
+  <!-- NEWEST -->
+  <section class="section container reveal" style="padding-top:0;">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Baru Diperbarui</span>
+        <h2 class="section-title">Properti Terbaru</h2>
+        <p class="section-sub">Kontrakan yang baru saja disetujui dan dipublikasikan pemiliknya.</p>
+      </div>
+      <a href="search.html" class="link-more">Lihat Semua →</a>
+    </div>
+    <div class="grid-cards" id="newest-grid"></div>
+  </section>
+
+  <!-- CARA KERJA -->
+  <section class="section container reveal" id="cara-kerja">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Cara Kerja</span>
+        <h2 class="section-title">Simpel, Cepat, dan Transparan</h2>
+      </div>
+    </div>
+    <div class="steps-tabs">
+      <span class="steps-tab active" onclick="setStepsTab(this,'pencari')">Untuk Pencari Kontrakan</span>
+      <span class="steps-tab" onclick="setStepsTab(this,'pemilik')">Untuk Pemilik</span>
+    </div>
+    <div class="steps-grid" id="steps-pencari">
+      <div class="step-card"><span class="step-num">01</span><h4>Cari Lokasi</h4><p>Gunakan pencarian dan filter untuk menemukan area yang kamu inginkan.</p></div>
+      <div class="step-card"><span class="step-num">02</span><h4>Lihat Detail</h4><p>Bandingkan harga, fasilitas, kelebihan, dan kekurangan tiap properti.</p></div>
+      <div class="step-card"><span class="step-num">03</span><h4>Masuk untuk Info Lengkap</h4><p>Daftar gratis untuk membuka seluruh foto dan kontak pemilik.</p></div>
+      <div class="step-card"><span class="step-num">04</span><h4>Hubungi Pemilik</h4><p>Tanyakan ketersediaan dan atur jadwal survey lokasi.</p></div>
+    </div>
+    <div class="steps-grid hidden" id="steps-pemilik">
+      <div class="step-card"><span class="step-num">01</span><h4>Daftar sebagai Pemilik</h4><p>Buat akun pemilik properti secara gratis dalam hitungan menit.</p></div>
+      <div class="step-card"><span class="step-num">02</span><h4>Ajukan Properti</h4><p>Isi detail lengkap, unggah foto, dan tentukan ketersediaan unit.</p></div>
+      <div class="step-card"><span class="step-num">03</span><h4>Tunggu Verifikasi</h4><p>Tim admin Cartok meninjau data properti kamu untuk menjaga kualitas platform.</p></div>
+      <div class="step-card"><span class="step-num">04</span><h4>Properti Dipublikasikan</h4><p>Properti tayang dan mulai dilihat ribuan pencari kontrakan.</p></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="section container reveal" id="tentang">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Kata Mereka</span>
+        <h2 class="section-title">Dipercaya Pencari dan Pemilik Kontrakan</h2>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">"Akhirnya nemu kos yang fotonya sesuai sama aslinya. Sebelum ke lokasi udah tahu fasilitas dan harga pastinya."</p>
+        <div class="testi-user"><img src="https://i.pravatar.cc/100?img=32" class="avatar"><div><div class="testi-name">Putri Ayu</div><div class="testi-role">Karyawan Swasta, Cikarang</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">"Sebagai pemilik kontrakan, proses daftarnya gampang banget. Admin cepat verifikasi dan langsung ada yang tanya-tanya."</p>
+        <div class="testi-user"><img src="https://i.pravatar.cc/100?img=12" class="avatar"><div><div class="testi-name">Andi Pratama</div><div class="testi-role">Pemilik Kontrakan Griya Biru Asri</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐</div>
+        <p class="testi-text">"Fitur bandingin harga dan lihat unit kosong beneran ngebantu, jadi nggak buang waktu survey ke tempat yang udah penuh."</p>
+        <div class="testi-user"><img src="https://i.pravatar.cc/100?img=45" class="avatar"><div><div class="testi-name">Dimas Saputra</div><div class="testi-role">Mahasiswa, Bandung</div></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+<script src="js/properties.js"></script>
+<script>
+  renderNavbar("home");
+  renderFooter();
+  initHomeSections();
+  initMarquee("city-marquee");
+  initScrollReveal();
+
+  function setStepsTab(el, which){
+    document.querySelectorAll(".steps-tab").forEach(t=>t.classList.remove("active"));
+    el.classList.add("active");
+    document.getElementById("steps-pencari").classList.toggle("hidden", which!=="pencari");
+    document.getElementById("steps-pemilik").classList.toggle("hidden", which!=="pemilik");
+  }
+</script>
+</body>
+</html>

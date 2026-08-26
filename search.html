@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cari Kontrakan &amp; Kos — Cartok</title>
+<meta name="description" content="Cari dan bandingkan kontrakan serta kos-kosan berdasarkan lokasi, harga, fasilitas, dan status ketersediaan.">
+<link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div id="page-loader" class="page-loader" aria-hidden="true">
+  <div class="loader-glow"></div>
+  <div class="loader-mark">
+    <img src="img/icon-96.png" alt="">
+    <span class="loader-ring"></span>
+  </div>
+  <div class="loader-word">Cartok</div>
+  <p class="loader-note">Prototipe Cari Kontrakan Online — website hanya contoh untuk keperluan testing. <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></p>
+  <div class="loader-progress-track"><div class="loader-progress-fill"></div></div>
+  <div class="loader-credit">Website Developer <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></div>
+</div>
+<noscript><style>.page-loader{display:none;}</style></noscript>
+
+
+<header id="site-navbar" class="navbar"></header>
+
+<main>
+  <section class="search-hero reveal">
+    <div class="container">
+      <span class="eyebrow">Pencarian</span>
+      <h1 class="search-hero-title">Cari kontrakan &amp; kos di 8 kota</h1>
+      <p class="section-sub">Pakai filter di samping untuk mempersempit pilihan sesuai budget dan kebutuhanmu.</p>
+    </div>
+  </section>
+
+  <div class="container" style="padding-bottom:80px;">
+    <div class="search-layout">
+      <!-- FILTER PANEL -->
+      <aside class="filter-panel" id="filter-panel">
+        <div class="filter-panel-head">
+          <h4>🎛️ Filter Pencarian</h4>
+          <button class="modal-close" id="close-filter-mobile" style="display:none;">✕</button>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-group-title">🔎 Kata Kunci</div>
+          <input type="text" id="f-query" placeholder="Nama properti, lokasi..." class="filter-input">
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-group-title">📍 Kota</div>
+          <select id="f-city" class="filter-input"></select>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-group-title">🏘️ Jenis Properti</div>
+          <label class="check-row"><input type="checkbox" name="f-type" value="kontrakan"> Kontrakan</label>
+          <label class="check-row"><input type="checkbox" name="f-type" value="kos_putra"> Kos Putra</label>
+          <label class="check-row"><input type="checkbox" name="f-type" value="kos_putri"> Kos Putri</label>
+          <label class="check-row"><input type="checkbox" name="f-type" value="kos_campur"> Kos Campur</label>
+          <label class="check-row"><input type="checkbox" name="f-type" value="perumahan"> Perumahan</label>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-group-title">💰 Rentang Harga</div>
+          <div class="range-row">
+            <input type="number" id="f-price-min" placeholder="Min" class="filter-input">
+            <input type="number" id="f-price-max" placeholder="Maks" class="filter-input">
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-group-title">🛏 Jumlah Kamar</div>
+          <select id="f-bedrooms" class="filter-input">
+            <option value="">Semua</option>
+            <option value="1">1 Kamar</option>
+            <option value="2">2 Kamar</option>
+            <option value="3">3 Kamar</option>
+            <option value="4">4+ Kamar</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-group-title">🛋 Furnitur</div>
+          <label class="check-row"><input type="checkbox" name="f-furnished" value="furnished"> Furnished</label>
+          <label class="check-row"><input type="checkbox" name="f-furnished" value="semi_furnished"> Semi Furnished</label>
+          <label class="check-row"><input type="checkbox" name="f-furnished" value="unfurnished"> Unfurnished</label>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-group-title">✨ Fasilitas</div>
+          <label class="check-row"><input type="checkbox" name="f-facilities" value="WiFi"> WiFi</label>
+          <label class="check-row"><input type="checkbox" name="f-facilities" value="AC"> AC</label>
+          <label class="check-row"><input type="checkbox" name="f-facilities" value="Parkir Motor"> Parkir Motor</label>
+          <label class="check-row"><input type="checkbox" name="f-facilities" value="Parkir Mobil"> Parkir Mobil</label>
+          <label class="check-row"><input type="checkbox" name="f-facilities" value="Dapur"> Dapur</label>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-group-title">🟢 Status</div>
+          <label class="check-row"><input type="checkbox" name="f-availability" value="tersedia"> Tersedia</label>
+          <label class="check-row"><input type="checkbox" name="f-availability" value="hampir_penuh"> Hampir Penuh</label>
+          <label class="check-row"><input type="checkbox" name="f-availability" value="penuh"> Penuh</label>
+        </div>
+
+        <div class="filter-panel-actions">
+          <button class="btn btn-primary btn-block" onclick="runSearch(); closeMobileFilter();">Terapkan Filter</button>
+          <button class="btn btn-ghost btn-block mt-8" onclick="resetFilters()">Reset Semua</button>
+        </div>
+      </aside>
+      <div class="filter-scrim" id="filter-scrim"></div>
+
+      <!-- RESULTS -->
+      <div>
+        <div class="results-bar">
+          <div>
+            <span class="results-count" id="results-count">Memuat...</span>
+            <div class="active-chips" id="active-chips"></div>
+          </div>
+          <div class="flex items-center gap-8">
+            <button class="btn btn-secondary btn-sm mobile-filter-btn" id="open-filter-mobile">🎛️ Filter</button>
+            <div class="sort-pills" id="sort-pills">
+              <button class="sort-pill active" data-sort="terbaru">Terbaru</button>
+              <button class="sort-pill" data-sort="termurah">Termurah</button>
+              <button class="sort-pill" data-sort="termahal">Termahal</button>
+              <button class="sort-pill" data-sort="rating">Rating</button>
+            </div>
+          </div>
+        </div>
+        <input type="hidden" id="f-sort" value="terbaru">
+        <div class="grid-cards" id="results-grid"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+<script src="js/properties.js"></script>
+<script>
+  renderNavbar("kontrakan");
+  renderFooter();
+  populateCityFilter();
+  initSearchPageFromURL();
+
+  document.querySelectorAll('.filter-panel input[type=checkbox], .filter-panel input[type=number], .filter-panel input[type=text], .filter-panel select').forEach(el=>{
+    el.addEventListener("change", runSearch);
+  });
+  document.getElementById("f-query").addEventListener("keyup", (e)=>{ if(e.key==="Enter") runSearch(); });
+
+  document.querySelectorAll(".sort-pill").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      document.querySelectorAll(".sort-pill").forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById("f-sort").value = btn.dataset.sort;
+      runSearch();
+    });
+  });
+
+  function openMobileFilter(){
+    document.getElementById("filter-panel").classList.add("open");
+    document.getElementById("filter-scrim").classList.add("open");
+    document.getElementById("close-filter-mobile").style.display = "flex";
+  }
+  function closeMobileFilter(){
+    document.getElementById("filter-panel").classList.remove("open");
+    document.getElementById("filter-scrim").classList.remove("open");
+  }
+  document.getElementById("open-filter-mobile").addEventListener("click", openMobileFilter);
+  document.getElementById("close-filter-mobile").addEventListener("click", closeMobileFilter);
+  document.getElementById("filter-scrim").addEventListener("click", closeMobileFilter);
+
+  runSearch();
+  initScrollReveal();
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masuk — Cartok</title>
+<link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div id="page-loader" class="page-loader" aria-hidden="true">
+  <div class="loader-glow"></div>
+  <div class="loader-mark">
+    <img src="img/icon-96.png" alt="">
+    <span class="loader-ring"></span>
+  </div>
+  <div class="loader-word">Cartok</div>
+  <p class="loader-note">Prototipe Cari Kontrakan Online — website hanya contoh untuk keperluan testing. <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></p>
+  <div class="loader-progress-track"><div class="loader-progress-fill"></div></div>
+  <div class="loader-credit">Website Developer <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></div>
+</div>
+<noscript><style>.page-loader{display:none;}</style></noscript>
+
+
+<header id="site-navbar" class="navbar"></header>
+
+<main class="auth-wrap">
+  <div class="auth-card">
+    <h2>Selamat Datang Kembali</h2>
+    <p class="mb-16">Masuk untuk melihat detail lengkap properti dan mengelola favoritmu.</p>
+
+    <form id="login-form">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="login-email" required placeholder="nama@email.com">
+      </div>
+      <div class="form-group">
+        <label>Kata Sandi</label>
+        <input type="password" id="login-password" required placeholder="Minimal 6 karakter">
+        <div class="form-error" id="login-error"></div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+    </form>
+
+    <div class="form-hint">
+      <b>Akun Demo</b>
+      <div class="mt-8">👤 User: <code>user@demo.com</code> / <code>123456</code></div>
+      <div class="mt-8">🏠 Pemilik Kontrakan: <code>owner@demo.com</code> / <code>123456</code></div>
+      <div class="mt-8">🛡️ Admin: <code>admin@demo.com</code> / <code>admin123</code></div>
+      <div class="flex gap-8 mt-16" style="flex-wrap:wrap;">
+        <button type="button" class="btn btn-sm btn-secondary" onclick="fillDemo('user')">Isi User</button>
+        <button type="button" class="btn btn-sm btn-secondary" onclick="fillDemo('owner')">Isi Pemilik</button>
+        <button type="button" class="btn btn-sm btn-secondary" onclick="fillDemo('admin')">Isi Admin</button>
+      </div>
+    </div>
+
+    <p class="auth-switch">Belum punya akun? <a href="register.html">Daftar sekarang</a></p>
+  </div>
+</main>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+<script>
+  renderNavbar("");
+
+  if(isLoggedIn()){ window.location.href = "index.html"; }
+
+  function fillDemo(role){
+    const acc = DEMO_ACCOUNTS[role];
+    document.getElementById("login-email").value = acc.email;
+    document.getElementById("login-password").value = acc.password;
+  }
+
+  document.getElementById("login-form").addEventListener("submit", (e)=>{
+    e.preventDefault();
+    const email = document.getElementById("login-email").value.trim();
+    const password = document.getElementById("login-password").value;
+    const errEl = document.getElementById("login-error");
+    errEl.style.display = "none";
+
+    const result = login(email, password);
+    if(!result.ok){
+      errEl.textContent = result.message;
+      errEl.style.display = "block";
+      toast(result.message, "error");
+      return;
+    }
+    toast("Berhasil masuk", "success");
+    setTimeout(()=>{
+      const params = new URLSearchParams(window.location.search);
+      const redirect = params.get("redirect");
+      if(redirect){ window.location.href = redirect; return; }
+      if(result.user.role === "owner") window.location.href = "dashboard-owner.html";
+      else if(result.user.role === "admin") window.location.href = "dashboard-admin.html";
+      else window.location.href = "index.html";
+    }, 500);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Properti Favorit Saya — Cartok</title>
+<link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div id="page-loader" class="page-loader" aria-hidden="true">
+  <div class="loader-glow"></div>
+  <div class="loader-mark">
+    <img src="img/icon-96.png" alt="">
+    <span class="loader-ring"></span>
+  </div>
+  <div class="loader-word">Cartok</div>
+  <p class="loader-note">Prototipe Cari Kontrakan Online — website hanya contoh untuk keperluan testing. <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></p>
+  <div class="loader-progress-track"><div class="loader-progress-fill"></div></div>
+  <div class="loader-credit">Website Developer <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></div>
+</div>
+<noscript><style>.page-loader{display:none;}</style></noscript>
+
+
+<header id="site-navbar" class="navbar"></header>
+
+<main class="section container" style="padding-top:28px;">
+  <div class="mb-16">
+    <h1 class="section-title">❤️ Properti Favorit Saya</h1>
+    <p class="section-sub">Kontrakan yang sudah kamu simpan untuk dilihat lagi nanti.</p>
+  </div>
+  <div class="grid-cards" id="fav-grid"></div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+<script src="js/properties.js"></script>
+<script>
+  renderNavbar("");
+  renderFooter();
+
+  function renderFavPage(){
+    const user = getCurrentUser();
+    const grid = document.getElementById("fav-grid");
+    if(!user){
+      grid.innerHTML = "";
+      openLoginRequiredModal("Masuk untuk melihat dan mengelola daftar properti favorit kamu.");
+      renderEmptyState(grid, {
+        icon:"🔒", title:"Masuk Diperlukan",
+        text:"Kamu perlu masuk untuk menyimpan dan melihat properti favorit.",
+        actionHtml:`<a href="login.html" class="btn btn-primary">Masuk Sekarang</a>`
+      });
+      return;
+    }
+    renderSkeletonCards(grid, 4);
+    setTimeout(()=>{
+      const favs = getFavoriteProperties(user.id);
+      if(!favs.length){
+        renderEmptyState(grid, {
+          icon:"💔", title:"Belum Ada Favorit",
+          text:"Simpan properti yang kamu suka dengan menekan ikon hati pada kartu properti.",
+          actionHtml:`<a href="search.html" class="btn btn-primary">Cari Kontrakan</a>`
+        });
+        return;
+      }
+      grid.innerHTML = favs.map(propertyCardHtml).join("");
+    }, 350);
+  }
+  renderFavPage();
+  document.addEventListener("favorites-changed", renderFavPage);
+</script>
+</body>
+</html>
