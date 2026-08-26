@@ -1,0 +1,77 @@
+/* ==========================================================================
+   CARTOK — Design Tokens v2
+   Direction: "boutique proptech ledger" — warm parchment / deep ink canvas,
+   brass as the primary signal color, forest green as the availability
+   signal, a characterful serif (Fraunces) for display type paired with a
+   quiet geometric sans (Manrope) for everything functional.
+   ========================================================================== */
+
+:root{
+  /* Light mode (default) — warm parchment, not stark white */
+  --bg-primary:#F6F3EC;
+  --bg-secondary:#FFFFFF;
+  --bg-elevated:#FFFFFF;
+  --bg-inset:#EEE8D9;
+  --text-primary:#1B1A16;
+  --text-secondary:#5C5648;
+  --text-tertiary:#95907C;
+  --accent:#A9722B;
+  --accent-strong:#875A20;
+  --accent-soft:#F1E2C3;
+  --forest:#1F5C46;
+  --forest-strong:#173F31;
+  --forest-soft:#DEEBE2;
+  --amber:#B87A16;
+  --amber-soft:#F7E7C9;
+  --red:#AE3B2C;
+  --red-soft:#F5E2DD;
+  --border:#E4DDC9;
+  --border-strong:#CFC5A8;
+  --card:#FFFFFF;
+  --ink:#1B1A16;
+  --shadow-sm: 0 1px 2px rgba(27,26,22,.06);
+  --shadow-md: 0 10px 28px rgba(27,26,22,.09);
+  --shadow-lg: 0 26px 60px rgba(27,26,22,.16);
+  --overlay: rgba(20,18,12,.6);
+  --radius-sm:10px;
+  --radius-md:18px;
+  --radius-lg:26px;
+  --font-display:'Fraunces', 'Georgia', serif;
+  --font-body:'Manrope', 'Segoe UI', sans-serif;
+  --grain-opacity:.035;
+  --footer-bg:#1B1A16;
+  --footer-text:#F6F3EC;
+  color-scheme: light;
+}
+
+[data-theme="dark"]{
+  --bg-primary:#111110;
+  --bg-secondary:#17160F;
+  --bg-elevated:#1C1B14;
+  --bg-inset:#0C0B08;
+  --text-primary:#F3EFE3;
+  --text-secondary:#B7AF98;
+  --text-tertiary:#79725D;
+  --accent:#E0AC5C;
+  --accent-strong:#F0C482;
+  --accent-soft:#2C2214;
+  --forest:#57B592;
+  --forest-strong:#3F8E71;
+  --forest-soft:#17271F;
+  --amber:#E7B559;
+  --amber-soft:#2B2312;
+  --red:#E28776;
+  --red-soft:#2C1B17;
+  --border:#2A2820;
+  --border-strong:#3C392C;
+  --card:#18170F;
+  --ink:#F3EFE3;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+  --shadow-md: 0 14px 34px rgba(0,0,0,.5);
+  --shadow-lg: 0 30px 70px rgba(0,0,0,.6);
+  --overlay: rgba(4,4,2,.72);
+  --grain-opacity:.05;
+  --footer-bg:#0A0A08;
+  --footer-text:#F3EFE3;
+  color-scheme: dark;
+}
