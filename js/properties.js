@@ -287,9 +287,9 @@ function initDetailPage(){
       </div>
       ${p.photos.length > 1 ? `
         <div class="gallery-side">
-          <div onclick="openLightbox(1)"><img src="${p.photos[1]||p.photos[0]}" alt=""/></div>
+          <div onclick="openLightbox(1)"><img src="${p.photos[1]||p.photos[0]}" alt="" loading="lazy"/></div>
           <div onclick="openLightbox(2)">
-            <img src="${p.photos[2]||p.photos[0]}" alt=""/>
+            <img src="${p.photos[2]||p.photos[0]}" alt="" loading="lazy"/>
             ${p.photos.length>3 ? `<div class="gallery-more">+${p.photos.length-3} Foto</div>` : ''}
           </div>
         </div>

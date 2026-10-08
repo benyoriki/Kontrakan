@@ -314,7 +314,8 @@ function initPageLoader(){
   const loader = document.getElementById("page-loader");
   if(!loader) return;
   const start = performance.now();
-  const minDisplay = 7000; // matches the 7s CSS progress-bar animation
+  let seen=false;try{seen=sessionStorage.getItem("cartok_ld");sessionStorage.setItem("cartok_ld","1");}catch(e){}
+  const minDisplay = seen ? 0 : 900; // matches the 7s CSS progress-bar animation
   let hidden = false;
   const hide = ()=>{
     if(hidden) return;
