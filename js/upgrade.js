@@ -36,7 +36,7 @@
 /* Bar prototipe + catatan footer + cahaya kursor */
 (function(){
   var d=document;
-  var T='Prototipe LoviaPartner \u2014 hanya contoh untuk keperluan testing. <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a>';
+  var T='Prototipe Cartok \u2014 hanya contoh untuk keperluan testing. <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a>';
   function init(){
     if(!d.querySelector(".dash-sidebar")){
       var bar=d.createElement("div");bar.className="proto-bar";bar.innerHTML=T;
