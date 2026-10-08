@@ -3,18 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cartok — Temukan Kontrakan &amp; Kos Terpercaya di Indonesia</title>
-<meta name="description" content="Cartok adalah platform pencarian dan pendaftaran kontrakan serta kos-kosan. Bandingkan harga, lihat fasilitas, dan temukan kontrakan yang tersedia sebelum datang ke lokasi.">
-<meta property="og:title" content="Cartok — Marketplace Kontrakan &amp; Kos Modern">
-<meta property="og:description" content="Cari, bandingkan, dan temukan kontrakan atau kos-kosan yang tepat untukmu.">
+<title>Cartok — Cari Kontrakan &amp; Kos Jadi Lebih Mudah</title>
+<meta name="description" content="Harga transparan, foto asli, fasilitas lengkap &amp; pemilik terverifikasi — tanpa perantara. Temukan hunian impianmu sekarang!">
+<meta property="og:title" content="Cartok — Cari Kontrakan &amp; Kos Jadi Lebih Mudah">
+<meta property="og:description" content="Harga transparan, foto asli, fasilitas lengkap &amp; pemilik terverifikasi — tanpa perantara. Temukan hunian impianmu sekarang!">
 <link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
 <link rel="apple-touch-icon" href="img/icon-192.png">
 
   <meta property="og:type" content="website">
 <meta property="og:url" content="https://benyoriki.github.io/Kontrakan/">
-<meta property="og:image" content="https://benyoriki.github.io/Kontrakan/preview-og.jpg">
+<meta property="og:image" content="https://benyoriki.github.io/Kontrakan/preview-og.jpg?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Cartok">
+<meta property="og:locale" content="id_ID">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="Cartok — Cari kontrakan jadi lebih mudah. Harga transparan, fasilitas lengkap, lokasi strategis.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cartok — Cari Kontrakan &amp; Kos Jadi Lebih Mudah">
+<meta name="twitter:description" content="Harga transparan, foto asli, fasilitas lengkap &amp; pemilik terverifikasi — tanpa perantara. Temukan hunian impianmu sekarang!">
+<meta name="twitter:image" content="https://benyoriki.github.io/Kontrakan/preview-og.jpg?v=2">
+
 
 <!-- PWA Manifest & Icons -->
 <link rel="manifest" href="manifest.json">
@@ -29,10 +38,11 @@
 <meta name="apple-mobile-web-app-title" content="Cartok">
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/theme.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/upgrade.css">
 </head>
 <body>
 <div id="page-loader" class="page-loader" aria-hidden="true">
@@ -42,7 +52,7 @@
     <span class="loader-ring"></span>
   </div>
   <div class="loader-word">Cartok</div>
-  <p class="loader-note">Prototipe Cari Kontrakan Online — website hanya contoh untuk keperluan testing. <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></p>
+  <p class="loader-note">Prototipe LoviaPartner — hanya contoh untuk keperluan testing. <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></p>
   <div class="loader-progress-track"><div class="loader-progress-fill"></div></div>
   <div class="loader-credit">Website Developer <a href="https://benyoriki.com/" target="_blank" rel="noopener">benyoriki.com</a></div>
 </div>
@@ -59,23 +69,25 @@
         <span class="hero-badge"><span class="dot">✓</span> <b>Kontrakan, Kos &amp; Perumahan</b></span>
         <h1>Temukan kontrakan yang <em>tepat</em>, jauh sebelum kamu datang ke lokasi.</h1>
         <p class="lead">Bandingkan kontrakan dan kos di satu tempat — lengkap dengan foto asli, kejujuran kelebihan-kekurangan, dan status unit kosong yang selalu diperbarui pemiliknya.</p>
+        <form class="hero-search" action="search.html" method="get">
+          <div class="hs-f wide"><label for="hs-q">Lokasi / nama</label><input id="hs-q" name="q" type="text" placeholder="Bekasi, Depok, Bandung..."></div>
+          <div class="hs-f"><label for="hs-t">Tipe</label><select id="hs-t" name="type"><option value="">Semua</option><option value="kontrakan">Kontrakan</option><option value="kos">Kos</option></select></div>
+          <div class="hs-f"><label for="hs-p">Harga maks</label><select id="hs-p" name="priceMax"><option value="">Bebas</option><option value="700000">Rp700rb</option><option value="1000000">Rp1 juta</option><option value="1500000">Rp1,5 juta</option></select></div>
+          <button class="btn btn-primary" type="submit">Cari</button>
+        </form>
+        <div class="hero-quick"><span>Populer:</span><a href="search.html?q=Bekasi">Bekasi</a><a href="search.html?q=Depok">Depok</a><a href="search.html?q=Bandung">Bandung</a><a href="search.html?type=kos">Kos</a></div>
         <div class="hero-actions">
-          <a href="search.html" class="btn btn-primary">Cari Kontrakan Sekarang</a>
+          <a href="search.html" class="btn btn-secondary">Lihat Semua Properti</a>
           <a href="register.html" class="btn btn-secondary">Daftarkan Properti Kamu</a>
         </div>
         <div class="hero-trust">
-          <div class="stack">
-            <img src="https://i.pravatar.cc/100?img=32" alt="">
-            <img src="https://i.pravatar.cc/100?img=12" alt="">
-            <img src="https://i.pravatar.cc/100?img=45" alt="">
-            <img src="https://i.pravatar.cc/100?img=8" alt="">
-          </div>
-          <span>Dipercaya 600+ pemilik &amp; ribuan pencari kontrakan di 8 kota</span>
+          <div class="stack"><span class="ini">AB</span><span class="ini">RS</span><span class="ini">DP</span><span class="ini">+</span></div>
+          <span>Pemilik terverifikasi, foto asli, dan status unit kosong yang selalu diperbarui</span>
         </div>
       </div>
 
       <div class="hero-visual">
-        <div class="hero-visual-card">
+        <div class="hero-visual-card c1"><img src="img/kos_kosan_01.jpg" alt="" loading="lazy"><div class="body"><div class="t1">Kos Eksklusif Lorong Elegan</div><div class="t2">Beji, Depok</div><div class="t3">Rp950.000 / bulan</div></div></div><div class="hero-visual-card c2"><img src="img/kontrak_04.jpg" alt="" loading="lazy"><div class="body"><div class="t1">Kontrakan Ibu Joko</div><div class="t2">Beji, Depok</div><div class="t3">Rp700.000 / bulan</div></div></div><div class="hero-visual-card c3">
           <img src="img/kontrak_01.jpg" alt="">
           <div class="body">
             <div class="t1">Kontrakan Griya Biru Asri</div>
@@ -105,6 +117,7 @@
     </div>
   </section>
 
+  <section class="container reveal" style="margin-top:34px"><div class="cat-grid"><a class="cat" href="search.html?type=kontrakan"><i><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></i><span><b>Kontrakan</b><small>Rumah petak &amp; utuh</small></span></a><a class="cat" href="search.html?type=kos"><i><svg viewBox="0 0 24 24"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 18h18M3 14h18M6 9V6h5v3"/></svg></i><span><b>Kos</b><small>Putra, putri, campur</small></span></a><a class="cat" href="search.html?q=Perumahan"><i><svg viewBox="0 0 24 24"><path d="M4 21V8l6-4 6 4v13"/><path d="M16 12h4v9M8 11h4M8 15h4M8 19h4"/></svg></i><span><b>Perumahan</b><small>Cluster &amp; minimalis</small></span></a><a class="cat" href="search.html?priceMax=800000"><i><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></i><span><b>Hemat</b><small>Di bawah Rp800rb</small></span></a></div></section>
   <!-- WHY CARTOK (bento) -->
   <section class="section container">
     <div class="section-head reveal">
@@ -218,20 +231,22 @@
       <div class="testi-card">
         <div class="testi-stars">⭐⭐⭐⭐⭐</div>
         <p class="testi-text">"Akhirnya nemu kos yang fotonya sesuai sama aslinya. Sebelum ke lokasi udah tahu fasilitas dan harga pastinya."</p>
-        <div class="testi-user"><img src="https://i.pravatar.cc/100?img=32" class="avatar"><div><div class="testi-name">Putri Ayu</div><div class="testi-role">Karyawan Swasta, Cikarang</div></div></div>
+        <div class="testi-user"><span class="ini">PA</span><div><div class="testi-name">Putri Ayu</div><div class="testi-role">Karyawan Swasta, Cikarang</div></div></div>
       </div>
       <div class="testi-card">
         <div class="testi-stars">⭐⭐⭐⭐⭐</div>
         <p class="testi-text">"Sebagai pemilik kontrakan, proses daftarnya gampang banget. Admin cepat verifikasi dan langsung ada yang tanya-tanya."</p>
-        <div class="testi-user"><img src="https://i.pravatar.cc/100?img=12" class="avatar"><div><div class="testi-name">Andi Pratama</div><div class="testi-role">Pemilik Kontrakan Griya Biru Asri</div></div></div>
+        <div class="testi-user"><span class="ini">AP</span><div><div class="testi-name">Andi Pratama</div><div class="testi-role">Pemilik Kontrakan Griya Biru Asri</div></div></div>
       </div>
       <div class="testi-card">
         <div class="testi-stars">⭐⭐⭐⭐</div>
         <p class="testi-text">"Fitur bandingin harga dan lihat unit kosong beneran ngebantu, jadi nggak buang waktu survey ke tempat yang udah penuh."</p>
-        <div class="testi-user"><img src="https://i.pravatar.cc/100?img=45" class="avatar"><div><div class="testi-name">Dimas Saputra</div><div class="testi-role">Mahasiswa, Bandung</div></div></div>
+        <div class="testi-user"><span class="ini">DS</span><div><div class="testi-name">Dimas Saputra</div><div class="testi-role">Mahasiswa, Bandung</div></div></div>
       </div>
     </div>
   </section>
+<section class="section container"><div class="section-head reveal"><div><span class="eyebrow">Pertanyaan umum</span><h2 class="section-title">Yang sering ditanyakan</h2></div></div><div class="faq"><details><summary>Apakah Cartok gratis dipakai?</summary><p>Mencari dan membandingkan kontrakan gratis. Pemilik juga bisa mendaftarkan properti tanpa biaya di versi prototipe ini.</p></details><details><summary>Bagaimana saya tahu pemiliknya asli?</summary><p>Setiap akun pemilik ditinjau manual oleh admin sebelum bisa mempublikasikan properti, dan listing wajib mencantumkan kelebihan serta kekurangan.</p></details><details><summary>Apakah status unit kosong selalu akurat?</summary><p>Pemilik memperbarui status unit sendiri. Tetap konfirmasi lewat kontak pemilik sebelum survei ke lokasi.</p></details><details><summary>Bisa menyimpan dan membandingkan pilihan?</summary><p>Bisa. Tandai favorit dengan ikon hati, lalu buka halaman Favorit untuk membandingkan beberapa pilihan.</p></details></div></section>
+  <section class="container"><div class="cta-band"><div><h3>Punya kontrakan atau kos? Penuhi unitnya lebih cepat.</h3><p>Daftarkan properti, tampilkan foto asli, dan biarkan pencari menemukanmu.</p></div><a href="register.html" class="btn btn-primary">Daftarkan Properti</a></div></section>
 </main>
 
 <footer id="site-footer"></footer>
@@ -254,5 +269,6 @@
     document.getElementById("steps-pemilik").classList.toggle("hidden", which!=="pemilik");
   }
 </script>
+<script src="js/upgrade.js" defer></script>
 </body>
 </html>
